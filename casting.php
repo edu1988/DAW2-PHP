@@ -9,9 +9,10 @@
 <body>
 
     <?php
-            $variable = null;
-            $variable2 = (string)$variable;
+            $variable = "plazas";
+            $variable2 = (float)$variable;
             echo "<br>",gettype($variable2),"&nbsp",$variable2;
+
             if($variable2){
                 echo "<br>true";
             }else{
