@@ -10,9 +10,11 @@
 
     <?php
 
-        $a=3;
-        $b=6;
+        $a=2;
+        $b=10;
         $c=10;
+
+        echo "Los 3 números elegidos son: $a, $b, $c<br>";
 
         //Cuál es el mayor de los tres
         $mayor=$a;
@@ -28,6 +30,8 @@
         echo "El número mayor de los 3 es el: ", $mayor,"<br>";
 
         //Ordenar los valores
+
+        //Método de la burbuja
         if($a<$b){
             $recipiente=$b;
             $b=$a;
@@ -43,7 +47,28 @@
             $a=$recipiente;
         }
 
-        echo "Valores ordenados: ", $a,$b,$c;
+        echo "Valores ordenados: $a, $b, $c<br>";
+
+        //Método de la burbuja con un array
+        $lista = array(4,2,3,1,8,32,3,8,54,2);
+
+        for($i = 1; $i<= sizeof($lista); $i++){
+            for($j = 0; $j < sizeof($lista)-1; $j++){
+                if($lista[$j] > $lista[$j+1]){
+                    $aux = $lista[$j];
+                    $lista[$j] = $lista[$j+1];
+                    $lista[$j+1] = $aux;
+                }
+            }
+        }
+
+        $resultado = "Valores del array ordenados: ";
+
+        for($i = 0; $i < sizeof($lista); $i++){
+            $resultado .= $lista[$i] . ", ";
+        }
+
+        echo $resultado;
 
         
 
