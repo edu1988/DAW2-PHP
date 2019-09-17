@@ -12,7 +12,7 @@
 
         $a=3;
         $b=6;
-        $c=1;
+        $c=10;
 
         //Cuál es el mayor de los tres
         $mayor=$a;
@@ -26,6 +26,26 @@
         }
 
         echo "El número mayor de los 3 es el: ", $mayor,"<br>";
+
+        //Ordenar los valores
+        if($a<$b){
+            $recipiente=$b;
+            $b=$a;
+            $a=$recipiente;
+        }if($b<$c){
+            $recipiente=$b;
+            $b=$c;
+            $c=$recipiente;
+        }
+        if($a<$b){
+            $recipiente=$b;
+            $b=$a;
+            $a=$recipiente;
+        }
+
+        echo "Valores ordenados: ", $a,$b,$c;
+
+        
 
         /*Dados tres valores a, b y c, que son longitudes de segmentos, saber si forman
         o no un triángulo*/ 
