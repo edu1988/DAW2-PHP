@@ -22,6 +22,21 @@
                     break;
             }
         }
+        
+        for($i=1; $i<30; $i++){
+            $rand = rand(rand(1,10),10);
+            echo "$rand, ";
+        }
+
+        echo "<br>";
+
+        for($i=1; $i<12; $i++){
+            $aleatorio=rand(1,3);
+            if($aleatorio==3){
+                $aleatorio="X";
+            }
+            echo $aleatorio," ";
+        }
     ?>
 </body>
 </html>
