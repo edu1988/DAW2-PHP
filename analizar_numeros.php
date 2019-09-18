@@ -10,7 +10,7 @@
 
     <?php
 
-        $a=2;
+        $a=23;
         $b=10;
         $c=10;
 
@@ -28,6 +28,11 @@
         }
 
         echo "El número mayor de los 3 es el: ", $mayor,"<br>";
+
+        //Otra forma
+        if($a>$b and $a>$c){
+            echo "El mayor valor es a: $a";
+        }
 
         //Ordenar los valores
 
@@ -68,7 +73,7 @@
             $resultado .= $lista[$i] . ", ";
         }
 
-        echo $resultado;
+        echo $resultado,"<br>";
 
         
 
@@ -77,6 +82,28 @@
 
         /*Condición indispensable: que el lado más largo sea mayor que la suma de los
         otros dos*/
+        $a=6;
+        $b=1;
+        $c=9;
+
+        /*Primero hay que averiguar el valor más grande*/
+
+        if($a<$b){
+            $recipiente=$b;
+            $b=$a;
+            $a=$recipiente;
+        }if($b<$c){
+            $recipiente=$b;
+            $b=$c;
+            $c=$recipiente;
+        }
+        if($a<$b){
+            $recipiente=$b;
+            $b=$a;
+            $a=$recipiente;
+        }
+
+
     ?>
     
 </body>
