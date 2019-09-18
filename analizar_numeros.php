@@ -86,21 +86,16 @@
         $b=1;
         $c=9;
 
-        /*Primero hay que averiguar el valor más grande*/
+        /*Cóndicion única a lo bestia*/
+        echo "Hola";
 
-        if($a<$b){
-            $recipiente=$b;
-            $b=$a;
-            $a=$recipiente;
-        }if($b<$c){
-            $recipiente=$b;
-            $b=$c;
-            $c=$recipiente;
-        }
-        if($a<$b){
-            $recipiente=$b;
-            $b=$a;
-            $a=$recipiente;
+        if((($a>$b) and ($a>$c) and ($a<$b+$c)) or 
+           (($b>$a) and ($b>$c) and ($b<$c+$a)) or
+           (($c>$b) and ($c>$a) and ($c<$a+$b))){
+
+                echo "Se puede formar un triángulo";
+        }else{
+                echo "No se puede formar un triángulo";
         }
 
 
