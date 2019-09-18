@@ -31,7 +31,7 @@
 
         //Otra forma
         if($a>$b and $a>$c){
-            echo "El mayor valor es a: $a";
+            echo "El mayor valor es a: $a<br>";
         }
 
         //Ordenar los valores
@@ -82,22 +82,36 @@
 
         /*Condición indispensable: que el lado más largo sea mayor que la suma de los
         otros dos*/
-        $a=6;
-        $b=1;
-        $c=9;
+        $a=11;
+        $b=11;
+        $c=24;
 
         /*Cóndicion única a lo bestia*/
-        echo "Hola";
+        //Problema con lados iguales
 
-        if((($a>$b) and ($a>$c) and ($a<$b+$c)) or 
-           (($b>$a) and ($b>$c) and ($b<$c+$a)) or
-           (($c>$b) and ($c>$a) and ($c<$a+$b))){
+        if((($a>=$b) and ($a>=$c) and ($a<$b+$c)) or 
+           (($b>=$a) and ($b>=$c) and ($b<$c+$a)) or
+           (($c>=$b) and ($c>=$a) and ($c<$a+$b))){
 
-                echo "Se puede formar un triángulo";
+                echo "Se puede formar un triángulo<br>";
+
+                if(($a==$b) and ($b==$c)){
+                    echo "Es un triángulo equilátero<br>";
+                }else{
+                    if(($a==$b)or($a==$c)or($b==$c)){
+                        echo "Es un triángulo isósceles ";
+                    }else{
+                        echo "Es un triángulo escaleno ";
+                    }
+        
+                    /*Comprobar aquí si es también rectángulo*/
+                }
+
         }else{
-                echo "No se puede formar un triángulo";
+                echo "No se puede formar un triángulo<br>";
         }
 
+       
 
     ?>
     
