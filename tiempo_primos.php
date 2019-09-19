@@ -9,15 +9,33 @@
 <body>
     <?php
 
-        $tiempo_inicial = microtime(true);
-
+        $tiempo_inicial = time();
+        $tiempo_transcurrido = time()-$tiempo_inicial;
+        
+        $contador=0;
         echo "<br>";
 
-        while( microtime(true) - $tiempo_inicial < 100){
+        $x=3;
 
-            echo time()."<br>";
+        while($tiempo_transcurrido < 1){
 
+            $divisor=2;
+            while(($x % $divisor != 0) && ($divisor<=$x/2)){
+
+                $divisor++;
+
+            }
+
+            if($x % $divisor != 0  /*$divisor > $x/2*/){
+                //echo "$x, ";
+                $contador++;
+            }
+            
+            $tiempo_transcurrido=time()-$tiempo_inicial;
+            $x++;
         }
+
+        echo "<br>$contador numeros primos calculados en 1 segundo";
 
         /*
         $xmax=1000;

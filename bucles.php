@@ -50,7 +50,7 @@
         echo "<br>";
         //Comprobar si un número es primo
 
-        $numero = 24;
+        $numero = 23;
         $divisor = 2;
         
         while(($numero%$divisor!=0) && ($divisor<=$numero/2)){
