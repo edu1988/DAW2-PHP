@@ -17,7 +17,7 @@
 
         $x=3;
 
-        while($tiempo_transcurrido < 1){
+        while($tiempo_transcurrido < 20){
 
             $divisor=2;
             while(($x % $divisor != 0) && ($divisor<=$x/2)){
@@ -27,9 +27,11 @@
             }
 
             if($x % $divisor != 0  /*$divisor > $x/2*/){
-                //echo "$x, ";
+                echo "$x, ";
                 $contador++;
             }
+			
+		
             
             $tiempo_transcurrido=time()-$tiempo_inicial;
             $x++;
