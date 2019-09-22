@@ -110,6 +110,24 @@
         $aleatorio=rand(1,49);
         echo "$aleatorio, ";
 
+        echo "<br>";
+        /**Números aleatorios ponderados */
+        
+        for($i=1; $i <=15; $i++){
+            $aleatorio = rand(1,10);
+            if($aleatorio >= 0 && $aleatorio <= 7){
+                $aleatorio = 1;
+            }else{
+                $aleatorio=rand(1,2);
+                if($aleatorio == 1){
+                    $aleatorio = "X";
+                }else{
+                    $aleatorio = 2;
+                }
+            }
+            echo $aleatorio,", ";
+        }
+
         
 
     ?>
