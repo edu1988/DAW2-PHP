@@ -50,7 +50,7 @@
         echo "<br>";
         //Comprobar si un número es primo
 
-        $numero = 23;
+        $numero = 24;
         $divisor = 2;
         
         while(($numero%$divisor!=0) && ($divisor<=$numero/2)){
@@ -89,6 +89,9 @@
         }
 
         echo "<br>Hay $contador numeros primos entre 0 y $xmax";
+
+        //Cuántos números primos puedo obtener en 20 segundos
+        
         
         
     ?>
