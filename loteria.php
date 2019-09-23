@@ -10,6 +10,7 @@
     
     <?php
 
+        //Loteria primitiva
         do{
             $aleatorio1 = rand(1,49);
             $aleatorio2 = rand(1,49);
@@ -29,8 +30,29 @@
         echo $aleatorio1,", ",$aleatorio2,", ",$aleatorio3,", ",$aleatorio4,", ",$aleatorio5,", ",$aleatorio6;
 
 
+        //Otra forma quizá más limpia
+        echo "<br>";
 
-        
+        $x1 = rand(1,49);
+        echo "Primero: $x1<br>";
+
+        do{
+            $x2 = rand(1,49);
+        }while($x2 == $x1);
+
+        echo "Segundo: $x2<br>";
+
+        do{
+            $x3 = rand(1,49);
+        }while($x3 == $x1 || $x3 == $x2); 
+
+        echo "Tercero: $x3<br>";
+
+        do{
+            $x4 = rand(1,49);
+        }while($x4==$x3 || $x4 == $x2 || $x4 == $x1);
+
+        echo "Cuarto: $x4<br>";
 
 
 
