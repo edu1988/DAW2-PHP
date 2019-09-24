@@ -9,7 +9,7 @@
 <body>
     
     <?php
-
+        /*
         //Loteria primitiva
         do{
             $aleatorio1 = rand(1,49);
@@ -33,19 +33,12 @@
         
 
         do{
-            $cantidad=30;
+            $cantidad=6;
 
             for($i=1; $i <= $cantidad; $i++){
                 $nombre = "aleatorio" . $i;
                 $$nombre = rand(1,49);
             }
-
-            /*$aleatorio1 = rand(1,49);
-            $aleatorio2 = rand(1,49);
-            $aleatorio3 = rand(1,49);
-            $aleatorio4 = rand(1,49);
-            $aleatorio5 = rand(1,49);
-            $aleatorio6 = rand(1,49);*/
 
             $repetidos = false;
 
@@ -65,6 +58,71 @@
             echo $$nombre,", ";
         }
 
+        echo "<br><br>";
+        
+        //Otra forma
+       $numeros=[];
+       $repeticion=false;
+       do{
+            //Rellenamos el array con números aleatorios
+            for($i=0; $i<6; $i++){
+                $numeros[$i]=rand(1,49);
+            }
+
+            //Comprobamos si hay repetidos
+            for($i=0; $i<6; $i++){
+
+                for($j=$i+1; $j<6; $j++){
+                    if($numeros[$i] == $numeros[$j]){
+                        $repeticion=true;
+                    }
+                }
+            }
+       }while($repeticion);
+
+       for($i=0; $i<6; $i++){
+           echo $numeros[$i] . "---";
+       }
+       
+       echo "<br>----<br>";
+       
+       //Otra forma pero con bucles while en vez de for
+       $numeros=[];
+       $repetido=false;
+       do{
+            //Rellenamos el array con números aleatorios
+            for($i=0; $i<6; $i++){
+                $numeros[$i]=rand(1,49);
+            }
+
+            $i=0;
+            while($i<6 && !$repetido){
+                $j=$i+1;
+                while($j<6 && !$repetido){
+                    if($numeros[$i]==$numeros[$j]){
+                        $repetido=true;
+                    }
+                    $j++;
+                }
+                $i++;
+            }
+       }while($repetido);
+
+       //Los mostramos
+       for($i=0; $i<6; $i++){
+           echo $numeros[$i] . "---";
+       }
+
+       echo "<br>-------<br>";
+       /*
+       //Otra forma
+       for($i=0; $i<6; $i++){
+           $nombre = "aleatorio" . $i;
+
+       }
+
+
+       
 
         //Otra forma quizá más limpia
         echo "<br><br><br><br>";
@@ -94,7 +152,39 @@
 
         //Otra opción
 
+        */
+        
+        $lista = [];
 
+        for($i=0; $i<7; $i++){
+
+            do{
+                $repetido = false;
+
+                $lista[$i] = rand(1,10);
+
+                $ultimoIndice = count($lista)-1;
+                $indice = $ultimoIndice;
+
+                while($indice >= 1 && !$repetido){
+
+                    if($lista[$ultimoIndice] == $lista[$indice-1]){
+
+                        $repetido = true;
+
+                    }
+
+                    $indice--;
+                }
+
+            }while($repetido);
+
+        }
+
+        for($i=0; $i < count($lista); $i++){
+
+            echo "$lista[$i] -";
+        }
         
 
 
