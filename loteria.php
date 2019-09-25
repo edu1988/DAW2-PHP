@@ -155,13 +155,14 @@
         */
         
         $lista = [];
+        $cantidad = 100;
 
-        for($i=0; $i<7; $i++){
+        for($i=0; $i<$cantidad; $i++){
 
             do{
                 $repetido = false;
 
-                $lista[$i] = rand(1,10);
+                $lista[$i] = rand(1,$cantidad);
 
                 $ultimoIndice = count($lista)-1;
                 $indice = $ultimoIndice;
