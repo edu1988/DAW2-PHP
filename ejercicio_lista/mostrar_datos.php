@@ -38,17 +38,6 @@
             echo "</tr>";
         }
 
-        echo "<table>";
-
-        echo $_SERVER['PHP_SELF'];
-        echo "<br>";
-        echo $_SERVER['SERVER_NAME'];
-
-        echo "<br>";
-        $foo = array(2 => 'a', 'foo' => 'b', 0 => 'c');
-        $foo[1] = 'd';
-        list($x, $y, $z) = $foo;
-        var_dump($foo,$x,$y,$z);
     ?>
     
 </body>
