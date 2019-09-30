@@ -22,6 +22,28 @@
         echo "El saldo máximo es " . $maximo . " y corresponde al cliente " .
                 $clientes[$imax]["nombre"];
 
+        echo "<br><br>";
+        
+        //Como guardar varios clientes con el mismo sueldo máximo
+
+        $maximo = $clientes[0]["saldo"];
+        $lista = array();
+        $lista[] = 0;
+        for($i=1; $i<count($clientes); $i++){
+            if($clientes[$i]["saldo"]>$maximo){
+                $maximo = $clientes[$i]["saldo"];
+                unset($lista);
+                $lista[] = $i;
+            }else if($clientes[$i]["saldo"]==$maximo){
+                $lista[] = $i;
+            }
+        }
+
+        //Mostramos los sueldos
+        for($x=0; $x<count($lista); $x++){
+            echo $lista[$x],"<br>";
+        } 
+
     ?>
     
 </body>
