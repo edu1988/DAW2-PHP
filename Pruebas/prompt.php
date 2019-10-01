@@ -9,17 +9,17 @@
 <body>
 
     <?php
-        $a=5;
-        $b=6;
+
+        function duplicar($num){
+            $num*=2;
+        }
+
+        $numero=27;
+        duplicar($numero);
+        echo "$numero";
+
 
     ?>
-
-    <?php if ( $a==$b ) { ?>
-
-        <h1>Hola que tal</h1>
-        <h2>Esto es un h2</h2>
-
-    <?php } ?>
 
 
     
