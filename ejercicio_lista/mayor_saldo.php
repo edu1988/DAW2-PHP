@@ -26,12 +26,12 @@
         
         //Como guardar varios clientes con el mismo sueldo máximo
 
-        $maximo = $clientes[0]["saldo"];
-        $lista = array();
-        $lista[] = 0;
+        $maximo = $clientes[0]["saldo"]; //inicializamos la variable máximo con el primer sueldo
+        $lista = array(); //Creamos un array
+        $lista[] = 0; //Asignamos a la primera posición del array el índice 0
         for($i=1; $i<count($clientes); $i++){
-            if($clientes[$i]["saldo"]>$maximo){
-                $maximo = $clientes[$i]["saldo"];
+            if($clientes[$i]["saldo"]>$maximo){ //Si el saldo de algún índice supera al original, el array se resetea
+                $maximo = $clientes[$i]["saldo"]; //La variable $maximo se actualiza
                 unset($lista);
                 $lista[] = $i;
             }else if($clientes[$i]["saldo"]==$maximo){
