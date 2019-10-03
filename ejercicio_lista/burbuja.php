@@ -60,7 +60,7 @@
             $r=0; $switch=1;
             while($r < $n && $switch){
                 $switch=0;
-                for($i=($n-1); $i > 0; $i--){
+                for($i=($n-1); $i > $r; $i--){
                     if($tabla[$i][$col] < $tabla[$i-1][$col]){
                         $aux=$tabla[$i];
                         $tabla[$i] = $tabla[$i-1];
