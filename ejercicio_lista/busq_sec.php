@@ -32,10 +32,10 @@
             }
         }
 
-       /*  Función para encontrar en una tabla un dato que puede
+        /*Función para encontrar en una tabla un dato que puede
         estar repetido en diferentes filas. En tal caso, nos 
-        retornará un array con las filas en las que se encuentra. */
-        
+        retornará un array con las filas en las que se encuentra.*/
+
         function buscaFilaRep($tabla,$columna,$dato){
             $filas=array();
             for($i=0; $i<count($tabla); $i++){
