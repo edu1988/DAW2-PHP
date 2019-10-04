@@ -14,8 +14,8 @@
 
         //Generamos un array aleatorio con 1000 valores
         $lista=[];
-        for($i=0; $i<1000; $i++){
-            $lista[] = rand(1,100);
+        for($i=0; $i<5000; $i++){
+            $lista[] = rand(1,1000);
         }
 
         //Creamos una copia del array (en php los array se pasan por valor);
@@ -42,6 +42,22 @@
         echo "Tiempo inicial --> $tiempo_inicial<br>";
         echo "Tiempo final --> $tiempo_final<br>";
         echo "Tiempo transcurrido --> $tiempo_transcurrido<br>";
+
+        echo "<br>";
+        echo "PRIMER ARRAY <br>";
+
+        //Mostramos los dos arrays ordenados
+        for($i=0;$i<count($lista);$i++){
+            echo "$lista[$i] ";
+        }
+
+        echo "<br><br>";
+        echo "SEGUNDO ARRAY <br>";
+
+        for($i=0;$i<count($lista);$i++){
+            echo "$lista2[$i] ";
+        }
+
 
         //Función para gestionar mejor los datos de la función microtime();
         function microtime_float(){

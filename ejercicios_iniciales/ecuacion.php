@@ -8,8 +8,8 @@
 	
 		<?php
 
-            $a=3;
-            $b=2;
+            $a=-5;
+            $b=3;
             $c=1;
 
             echo "a = $a ; b = $b ; c = $c<br>";
@@ -32,22 +32,6 @@
                 }
 
             }
-
-            $variable = null;
-            $variable2 = (string)$variable;
-            echo "<br>",gettype($variable2),"&nbsp",$variable2;
-            if($variable2){
-                echo "<br>true";
-            }else{
-                echo "<br>false"; 
-            }
-
-            if($variable2==""){
-                echo "<br>cadena vacia";
-            }else{
-                echo "<br>otra cosa"; 
-            }
-
 
 		
 		?>
