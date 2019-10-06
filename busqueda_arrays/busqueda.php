@@ -21,7 +21,7 @@
 
         echo "<br>";
 
-        busquedaDic($lista,1);
+        busquedaBinaria($lista,11);
 
     ?>
     

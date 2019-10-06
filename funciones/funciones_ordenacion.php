@@ -43,15 +43,20 @@
         }
 
         /*Función para ordenar los valores de un array unidimensional
-        por el método de selección*/
+        por el método de selección directa*/
 
         function ordenarSelec(&$lista){
             for($i=0; $i<count($lista)-1; $i++){
+                $k=$i;
+                $aux=$lista[$i];
                 for($j=$i+1; $j<count($lista); $j++){
-                    if($lista[$i]>$lista[$j]){
-                        intercambia($lista[$i],$lista[$j]);
+                    if($lista[$j] < $aux){
+                        $k=$j;
+                        $aux=$lista[$k];
                     }
                 }
+                $lista[$k] = $lista[$i];
+                $lista[$i] = $aux;
             }
         }
 

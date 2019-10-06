@@ -14,9 +14,9 @@
 
         /*Condición indispensable: que el lado más largo sea mayor que la suma de los
         otros dos*/
-        $a=11;
-        $b=11;
-        $c=24;
+        $a=1;
+        $b=1;
+        $c=sqrt(2);
 
         echo "La longitud de los lados es: $a, $b y $c<br>";
 
@@ -44,6 +44,40 @@
         }else{
                 echo "No se puede formar un triángulo<br>";
         }
+
+        echo "<br>";
+
+        //Otra forma de hacerlo
+        //Primero ordenamos las longitudes de los lados
+        $lados = [$a,$b,$c];
+        include "../funciones/funciones_ordenacion.php";
+        ordenarBurb($lados);
+        $a = $lados[0]; $b=$lados[1]; $c = $lados[2];
+        $rect=0;
+        if(($a+$b)>$c){
+            
+            if((int)(pow($a,2)+pow($b,2))==(int)pow($c,2)){
+                $rect=1;
+            }
+            if($a==$b && $a==$c){
+                echo "<br>Es un triángulo equilátero<br>";
+            }else{
+                if($a==$b || $a==$c || $b==$c){
+                    echo "<br>Es un triángulo isosceles ";
+                    if($rect){
+                        echo " y rectángulo";
+                    }
+                }else{
+                    echo "<br>Es un triángulo escaleno ";
+                    if($rect){
+                        echo " y rectángulo";
+                    }
+                }
+            }
+        }else{
+            echo "<br>No se puede formar un triángulo<br>";
+        }
+
     ?>
     
 </body>

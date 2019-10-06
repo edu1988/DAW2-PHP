@@ -37,6 +37,44 @@
             }
             echo "</tr>";
         }
+        echo "</table>";
+
+        echo "<br><br>";
+
+        //Vamos a ordenar los valores de la tabla por saldo
+        include "../funciones/funciones_ordenacion.php";
+        ordenarTabla($clientes,"dni");
+        //La volvemos a mostrar
+        echo "<table>";
+        //Mostrar cabecera
+        echo "<tr>";
+        for($i=0;$i<count($cabecera);$i++){
+            echo "<td>",$cabecera[$i],"</td>";
+        }
+        echo "</tr>";
+        //Mostrar clientes
+        for($i=0;$i<count($clientes);$i++){
+            echo "<tr>";
+            foreach($clientes[$i] as $valor){
+                echo "<td>",$valor,"</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>";
+
+        echo "<br><br>";
+
+        //Vamos a buscar un dni con la función de búsqueda binaria para tablas
+        include "../funciones/funciones_busqueda.php";
+        $dni = "73887234A";
+        $fila = busquedaBinTabla($clientes,"dni",$dni);
+        if($fila != -1){
+            $fila++;
+            echo "<br>El dni $dni se ha encontrado en la fila $fila";
+        }else{
+            echo "<br>No se ha encontrado ese valor";
+        }
+        
 
     ?>
     

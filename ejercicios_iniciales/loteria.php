@@ -9,6 +9,30 @@
 <body>
     
     <?php
+
+        /*Elaboración de una quiniela ponderada*/
+
+        //15 valores aleatorios (1, X o 2)
+        //La probabilidad de obtener un 1 es del 70%
+        //Del 30% restante de probabilidades hay la mitad para X y la mitad para 2
+
+        echo "Quiniela con valores ponderados (1-70%; X-15%, 2-15%)<br>";
+        
+        for($i=1; $i <=15; $i++){
+            $aleatorio = rand(1,10);
+            if($aleatorio >= 0 && $aleatorio <= 7){
+                $aleatorio = 1;
+            }else{
+                $aleatorio=rand(1,2);
+                if($aleatorio == 1){
+                    $aleatorio = "X";
+                }else{
+                    $aleatorio = 2;
+                }
+            }
+            echo $aleatorio,", ";
+        }
+
         /*
         //Loteria primitiva
         do{
@@ -153,16 +177,19 @@
         //Otra opción
 
         */
+
+        echo "<br><br>";
+        echo "LOTERIA: 6 valores aleatorios no repetidos entre 1 y 49<br>";
         
         $lista = [];
-        $cantidad = 100;
+        $cantidad = 6;
 
         for($i=0; $i<$cantidad; $i++){
 
             do{
                 $repetido = false;
 
-                $lista[$i] = rand(1,$cantidad);
+                $lista[$i] = rand(1,49);
 
                 $ultimoIndice = count($lista)-1;
                 $indice = $ultimoIndice;
