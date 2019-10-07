@@ -15,7 +15,7 @@
         $lista=array("España"=>"Madrid","Italia"=>"Roma","Francia"=>"Paris");
 
         verTabla($clientes);
-        ordenarTablaBur($clientes,"nombre"); echo "<br><br>";
+        ordenarTablaBur($clientes,"saldo"); echo "<br><br>";
         verTabla($clientes);
         
 
