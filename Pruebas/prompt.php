@@ -10,13 +10,7 @@
 
     <?php
 
-        function duplicar($num){
-            $num*=2;
-        }
-
-        $numero=27;
-        duplicar($numero);
-        echo "$numero";
+       phpinfo();
 
 
     ?>
