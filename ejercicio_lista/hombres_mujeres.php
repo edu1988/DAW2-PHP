@@ -37,6 +37,7 @@
         echo "Hay $chicos chicos en toda la lista.";
         echo "<br>";
         echo "Hay $chicas chicas en toda la lista.";
+        echo htmlspecialchars(chr(166));
 
     ?>
     
