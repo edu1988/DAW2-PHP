@@ -17,7 +17,7 @@
             echo "El valor que intentas insertar ya existe";
         }else{
             //Movemos todos los elementos a partir del índice localizado
-            //una posición hacia la derecha
+            //una posición hacia delante
             for($i=count($tabla)-1; $i>=$indice; $i--){
                 $tabla[$i+1] = $tabla[$i];
             }
@@ -29,7 +29,12 @@
 
 
     /**Función para búsqueda binaria de un valor en la columna de un
-     * array bidimensional
+     * array bidimensional.
+     * Modificamos en ella los valores de retorno para que nos dé los
+     * datos necesarios que necesitamos para la función de insertar:
+     *      -El valor del índice i, que coincide con la posición en la 
+     *          que debería estar el elemento que buscamos pero que no
+     *          está.
      */
     function busquedaBinTabla($tabla,$columna,$valor){
         $i=0; //Posicion inicial
@@ -52,28 +57,6 @@
     }
 
 
-    //Método necesario de búsqueda binaria
-    function busquedaBinaria($lista,$valor){
-        $i=0; //Posicion inicial
-        $j=count($lista)-1; //Posicion final
-        $medio = (int)(($i+$j)/2); //Índice de la posición media
-        while($lista[$medio] != $valor && ($i<=$j)){
-            if($valor < $lista[$medio]){
-                $j = $medio - 1; //El tope superior será el anterior al medio
-            }else{
-                $i = $medio + 1; //El tope inferior será el posterior al medio
-            }
-            $medio = (int)(($i+$j)/2); //Recalculamos el indice medio
-        }
-        //Al abandonar del bucle ya se ha escaneado todo el array
-        if($lista[$medio]!=$valor){
-            //No se ha encontrado el elemento
-            return $i; //Posición en la que debería estar el elemento que insertemos
-        }else{
-            //El elemento se ha encontrado, enviamos código de "error";
-            return -1;
-        }
-    }
 
 
 

@@ -18,7 +18,7 @@
         verTabla($clientes);
         echo "<br>";
         //La ordenamos por DNI y la volvemos a mostrar
-        ordenarTabla($clientes,"ciudad");
+        ordenarTabla($clientes,"dni");
         verTabla($clientes);
         echo "<br>";
         //Insertamos una fila
@@ -26,7 +26,7 @@
                     "fecha"=>"10/02/2002","ciudad"=>"Burgos","saldo"=>113,
                     "idiomas"=>"francés,checo,alemán");
         
-        insertarOrdenado($fila,"ciudad",$clientes);
+        insertarOrdenado($fila,"dni",$clientes);
         verTabla($clientes);
 
 
