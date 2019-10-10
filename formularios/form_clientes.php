@@ -10,6 +10,20 @@
     body{
         padding:30px;
     }
+    input{
+        width:125px;
+    }
+    select{
+        width:130px;
+    }
+    #formu{
+        display:inline-block;
+        border:1px solid black;
+        padding:10px;
+    }
+    table{
+        display:inline-block;
+    }
 </style>
 <body>
 
@@ -21,13 +35,18 @@
         //PROCESAR DATOS
         if(isset($_POST["enviar"])){
             //Extraemos variables
-            $dni=$_POST["dni"];
-            $nombre=$_POST["nombre"];
-            $fecha=$_POST["fecha"];
-            $ciudad=$_POST["ciudad"];
-            $saldo=$_POST["saldo"];
-            $idiomas=$_POST["idiomas"];
-            
+            foreach($_POST as $key=>$dato){
+                $$key=$dato;
+            }
+            /*  Forma antigua de hacerlo
+                $dni=$_POST["dni"];
+                $nombre=$_POST["nombre"];
+                $fecha=$_POST["fecha"];
+                $ciudad=$_POST["ciudad"];
+                $saldo=$_POST["saldo"];
+                $idiomas=$_POST["idiomas"];
+            */
+
             //Construimos el string con los idiomas especificados
             $cadenaIdiomas="";
             for($i=0;$i<count($idiomas);$i++){
@@ -46,7 +65,7 @@
 
     ?>
 
-    
+    <div id="formu">
     <h1>AÑADIR CLIENTE</h1>
     <form method="post" action="">
 
@@ -61,11 +80,19 @@
             </tr> 
             <tr>
                 <td><label for="fecha">Fecha&nbsp;&nbsp;</label></td>
-                <td><input type="text" name="fecha" id="fecha"/><br></td>
+                <td><input type="date" name="fecha" id="fecha"/></td>
             </tr> 
             <tr>
                 <td><label for="ciudad">Ciudad&nbsp;&nbsp;</label></td>
-                <td><input type="text" name="ciudad" id="ciudad"/><br></td>
+                <td>
+                    <select name="ciudad" id="ciudad">
+                        <option value="Burgos">Burgos</option>
+                        <option value="Ávila">Ávila</option>
+                        <option value="Palencia">Palencia</option>
+                        <option value="Leon">León</option>
+                        <option value="Zamora">Zamora</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td><label for="saldo">Saldo&nbsp;&nbsp;</label></td>
@@ -74,8 +101,7 @@
             <tr>
                 <td><label for="idioma">Idiomas</label></td>
                 <td>
-                    <select name="idiomas[]" id="idiomas" size="5" multiple="multiple"
-                            style="width:166px">
+                    <select name="idiomas[]" id="idiomas" size="5" multiple>
                         <option value="español">Español</option>
                         <option value="inglés">Inglés</option>
                         <option value="francés">Francés</option>
@@ -91,7 +117,7 @@
  
         <br>
     </form>
-
+    </div>
     
 </body>
 </html>
