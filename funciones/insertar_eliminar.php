@@ -15,22 +15,22 @@
     function insertarOrdenado($fila,$columna,&$tabla){
         //Buscamos el elemento que queremos insertar para ver si ya existe
         $indice = busquedaBinariaTabla($tabla,$columna,$fila[$columna]);
-        if(is_int($indice)){
-            echo "El valor que intentas insertar ya existe";
-        }else{
-            //Extraemos la posición donde debemos insertar el elemento
+        /*Extraemos el índice donde debería estar o bien aquel en el que ya
+        está, en cuyo caso también lo insertaremos duplicado en esa posición
+        y desplazaremos todos los demás*/
+        if(!is_int($indice)){
+            //Extraemos la posición eliminando la etiqueta "x" que nos devuelve el metodo de búsqueda
             $indice=intval(substr($indice,1));
-
-            /*Movemos todos los elementos a partir del índice localizado
-              una posición hacia delante.*/
-              
-            for($i=count($tabla)-1; $i>=$indice; $i--){
-                $tabla[$i+1] = $tabla[$i];
-            }
-            //Una vez, desplazados, insertamos nuestro elemento
-            $tabla[$indice] = $fila;
         }
+        /*Movemos todos los elementos a partir del índice localizado
+        una posición hacia delante.*/ 
+        for($i=count($tabla)-1; $i>=$indice; $i--){
+            $tabla[$i+1] = $tabla[$i];
+        }
+        //Una vez, desplazados, insertamos nuestro elemento
+        $tabla[$indice] = $fila;
     }
+    
 
 
     function eliminarFila(&$tabla,$columna,$valor){
@@ -45,6 +45,7 @@
             }
             //Nos cargamos el último elemento, que está repetido al final
             unset($tabla[count($tabla)-1]);
+            return 0;
         }
     }
 
