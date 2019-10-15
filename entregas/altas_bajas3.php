@@ -46,27 +46,23 @@
 
     <?php
         //INCLUDES NECESARIOS
-        include "../ejercicio_lista/arrayclientes.php";
+        
         include "../funciones/mostrar_arrays.php";
         include "../funciones/funciones_ordenacion.php";
         include "../funciones/insertar_eliminar.php";
         include "../funciones/funciones_validacion.php";
         include "../funciones/ficheros.php";
 
-        $clientesDef=[];
-
         if(!file_exists("clientes.txt")){
+            include "../ejercicio_lista/arrayclientes.php";
+            //Ordenamos el array
+            ordenarTabla($clientes,"dni");
+            //Generamos el fichero
             arrayToFile($clientes,"clientes.txt");
-            
         }else{
-            fileToArray("clientes.txt","~",$clientesDef);
+            $clientes=[];
+            fileToArray("clientes.txt","~",$clientes);
         }
-        
-        
-        //Ordenamos la tabla
-        ordenarTabla($clientesDef,"dni");
-
-        
 
         //Inicializamos variables necesarias para su uso posterior
         $claseNombre=""; 
@@ -78,8 +74,6 @@
         //ACCIÓN PRINCIPAL
         //BOTON ENVIAR
         if(isset($_POST["enviar"])){
-
-           
 
             //Array para GENERAR UN ARRAY DE ERRORES Y GENERAR LAS VARIABLES SIMPLES
             foreach($_POST as $key => $dato){
@@ -164,7 +158,10 @@
                               "ciudad"=>$ciudad, "saldo"=>$saldo, "idiomas"=>$cadenaIdiomas);
 
                 //Insertamos el cliente en la posición que le corresponde
-                insertarOrdenado($cliente,"dni",$clientesDef);
+                insertarOrdenado($cliente,"dni",$clientes);
+
+                //Regeneramos el fichero txt
+                arrayToFile($clientes,"clientes.txt");
                 
             }//Fin del if (todo correcto para insertar cliente)
 
@@ -173,31 +170,43 @@
         //BORRAR CLIENTE
         if(isset($_POST["borrar"])){
 
+            //Generamos tambien una variable para guardar el error
+            $error["dni"]="";
+
             $dni=$_POST["dni"]; //Extraemos el dni a borrar del campo DNI
 
             if($dni==""){
-                $msgDni="Falta ingresar el DNI";
+                $error["dni"].="Falta ingresar el DNI. ";
                 $claseDni="error";
             }else{
                 if(!validarDni($dni)){
-                    $msgDni="Formato incorrecto";
+                    $error["dni"].="Formato incorrecto. ";
                     $claseDni="error";
+                }else{
+                    if(!is_int(busquedaBinariaTabla($clientes,"dni",$dni))){
+                        $error["dni"].="Ese dni no existe. ";
+                        $claseDni="error";
+                    }
                 }
+                
             }
 
             //SI TODO VA BIEN, BORRAMOS EL CLIENTE CON EL DNI CORRESPONDIENTE
             if($claseDni==""){
                  //Borramos la fila correspondiente a ese dni del array
-                 $eliminado=eliminarFila($clientes,"dni",$dni);
-                 if($eliminado==-1){
-                     $msgDni="Ese DNI no existe";
-                     $claseDni="error";
-                 }else{
-                     $msgDni="DNI BORRADO";
-                 }
+                 eliminarFila($clientes,"dni",$dni);
+                 $error["dni"] = "¡DNI BORRADO!";
+
+                 //Regeneramos el fichero
+                 arrayToFile($clientes,"clientes.txt");
             }
 
         }
+
+        //ORDENAMOS Y MOSTRAMOS LA TABLA  
+       
+        verTabla($clientes);
+
 
     ?>
 
@@ -264,14 +273,6 @@
         <br>
     </form>
     </div>
-
-    <?php
-        //MOSTRAMOS LA TABLA
-       
-        verTabla($clientesDef);
-        
-        
-    ?>
     
 </body>
 </html>
