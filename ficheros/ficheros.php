@@ -12,10 +12,13 @@
         <input type="submit" name="enviar"/>
     </form>
     <?php
-        echo "ª";
+        
         if(isset($_POST["enviar"])){+
             
             $archivo = fopen("archivo.txt","w");
+            if(!$archivo){
+                echo "El archivo no existe";
+            }
             fwrite($archivo,$_POST["text"]);
             fclose($archivo);
         }

@@ -1,0 +1,10 @@
+dni~nombre~fecha~ciudad~saldo~idiomas
+73887234A~Perez Miguel, Marisa~10/05/1988~Burgos~115~español,italiano
+82229482C~Suarez López, Manuel~31/03/1999~Cuenca~116~español,italiano,frances
+12332321C~Palencia Mulero, Luis~12/01/1978~Valladolid~117~alemán,suahili
+45400223D~Martín Crespo, María~09/05/1988~Burgos~114~francés,inglés,danés
+73887234A~Rivas Gutierrez, Jimena~12/07/1926~Torrelavega~113~noruego,finlandés,español
+12345345X~Castro Miguel, Rebeca~10/05/1988~Lugo~112~español,groenlandés
+87232321Z~Ruiz Viforcos, Manoli~10/05/1988~Briviesca~111~italiano,árabe,canadiense
+88322891G~Carril Saiz, Saúl~14/06/1985~Barakaldo~110~hebreo,chino,japonés
+19332981C~Aldeano del Monte, Johana~04/12/2001~Cordoba~109~español,lituano,danés,alemán
