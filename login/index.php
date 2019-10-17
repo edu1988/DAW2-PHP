@@ -6,13 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        div{
-            border:2px solid red;
-            display:inline-block;
-            padding:10px;
-            margin:100px;
-            text-align:center;
-        }
+        	body{
+				background:#B6E7ED;
+			}
+			
+			h1{
+				text-align:center;
+			}
+
+			table{
+				background-color:#B6E7FD;
+				padding:15px;
+				border:#666 5px solid;
+                align:center;
+                width:15%;
+                margin-left:auto;
+                margin-right:auto;
+                margin-top:100px;
+			}
     </style>
 </head>
 <body>
@@ -39,6 +50,7 @@
         if(isset($_POST["enviar"])){
             //Primero comprobamos si se ha logueado como administrador
             if($_POST["dni"]=="admin" && $_POST["pass"]=="1234"){
+                //NOS VAMOS A BACKEND.PHP
                 echo "<META HTTP-EQUIV='REFRESH' CONTENT='1;URL=http://localhost/login/backend.php'>";
             }else{
                 //En el caso de que no sea administrador, miramos si está en la "base de datos"
@@ -46,17 +58,32 @@
                 //Buscamos si el dni insertado existe
                 $dni=$_POST["dni"];
                 $resultado=busquedaBinariaTabla($clientes,"dni",$dni);
+                //Sí la función nos devuelve un entero, es que sí que existe
                 if(is_int($resultado)){
                     //Comprobamos si en esa fila del array, el password coincide con el insertado
                     $passIntroducido = $_POST["pass"];
                     $passReal = $clientes[$resultado]["pass"];
                     if($passIntroducido==$passReal){
-                        //NOS VAMOS A FRONTEND.PHP nos vamos
+                        //Generamos otro archivo con los datos que nos llevaremos a frontend.php
+                        $fichero=fopen("sesion.txt","w");
+                        fwrite($fichero,$dni);
+
+                        //NOS VAMOS A FRONTEND.PHP
+                        echo "<META HTTP-EQUIV='REFRESH' CONTENT='1;URL=http://localhost/login/frontend.php'>";
+
                     }else{//contraseña incorrecta
-                        echo "Contraseña Incorrecta";
+                        echo "<script>
+                                window.onload = function mostrar(){
+                                    document.getElementById('mensajes').innerHTML='Contraseña incorrecta';
+                                }
+                             </script>";
                     }
-                }else{//el dni no existe
-                    echo "El dni no existe";
+                }else{//Si la función no nos retorna un entero, el dni no existe
+                    echo "<script>
+                                window.onload = function mostrar(){
+                                    document.getElementById('mensajes').innerHTML='El DNI no existe';
+                                }
+                          </script>";
                 }
 
 
@@ -65,16 +92,33 @@
 
         }
     ?>
-    <div>
-        <form method="post" action="">
-            <label for="dni">Introduzca DNI:&nbsp;</label>
-            <input type="text" name="dni">
-            <br><br>
-            <label for="pass">Introduzca password:&nbsp;</label>
-            <input type="password" name="pass">
-            <br><br>
-            <input type="submit" name="enviar" value="Ingresar">
-        </form>
-    </div>
+    <form action="" method="post" name="datos_usuario" id="datos_usuario">
+        <table>
+            <tr>
+                <td><label for="dni">DNI:</label></td>
+                <td>
+                    <input type="text" name="dni" id="dni">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="pass">Contraseña:</label></td>
+                <td>
+                    <input type="password" name="pass" id="pass">
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="enviar" id="enviar" value="Enviar">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" id="mensajes"><td>
+            </tr>
+        </table>
+	</form>
 </body>
 </html>

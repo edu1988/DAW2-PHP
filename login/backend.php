@@ -6,13 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        div{
-            border:2px solid red;
-            display:inline-block;
-            padding:10px;
-            margin:100px;
-            text-align:center;
-        }
+        body{
+			background:#B6E7ED;
+		}
+			
+		h1{
+			text-align:center;
+		}
+
+		table{
+            background-color:#B6E7FD;
+            padding:15px;
+            border:#666 5px solid;
+            align:center;
+            width:auto;
+            margin-left:auto;
+            margin-right:auto;
+            margin-top:100px;
+            border-collapse:collapse;
+		}
     </style>
 </head>
 <body>
@@ -20,12 +32,24 @@
         
 
     ?>
-    <div>
-        <h2>BIENVENIDO ADMINISTRADOR</h2>
-        <p>1. Listado</p>
-        <p>2. Altas</p>
-        <p>3. Bajas</p>
-        <p>4. Informe</p>
-    </div>
+    <table>
+        <tr>
+            <td><h1>BIENVENIDO ADMINISTRADOR</h1></td>
+        </tr>
+        <tr>
+            <td><a href="lista.php">1. Listado</a></td>
+        </tr>
+        <tr>
+            <td><a href="altas.php">2. Altas</a></td>
+        </tr>
+        <tr>
+            <td><a href="bajas.php">3. Bajas</a></td>
+        </tr>
+        <tr>
+            <td><a href="informe.php">4. Informe</a></td>
+        </tr>
+
+    </table>
+
 </body>
 </html>
