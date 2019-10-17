@@ -9,4 +9,6 @@
 
     
     fileToArray("clientes.txt","~",$clientes2);
+
+    
 ?>
