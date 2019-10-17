@@ -1,8 +1,9 @@
 dni~nombre~fecha~ciudad~saldo~idiomas
-12332321C~Palencia Mulero, Luis~12/01/1978~Valladolid~117~alemán,suahili
-12345345X~Castro Miguel, Rebeca~10/05/1988~Lugo~112~español,groenlandés
 19332981C~Aldeano del Monte, Johana~04/12/2001~Cordoba~109~español,lituano,danés,alemán
 45400223D~Martín Crespo, María~09/05/1988~Burgos~114~francés,inglés,danés
+71299244A~Eduardo Perez~2019-10-11~Burgos~1223~
+71299244C~Eduardo Perez~2019-10-11~Burgos~1223~
+71299244D~Eduardo Perez~2019-10-11~Burgos~1223~
 73887234A~Perez Miguel, Marisa~10/05/1988~Burgos~115~español,italiano
 73887234A~Rivas Gutierrez, Jimena~12/07/1926~Torrelavega~113~noruego,finlandés,español
 82229482C~Suarez López, Manuel~31/03/1999~Cuenca~116~español,italiano,frances
