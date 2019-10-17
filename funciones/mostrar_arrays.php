@@ -30,4 +30,26 @@
         echo "</table>";
     }
 
+    /**Mostrar array no-asociativo de una dimensión */
+    function verListaN($lista){
+        echo "<table border='1'>";
+        foreach($lista as $clave => $valor){
+            echo "<tr><td>$valor</td></tr>";
+        }
+        echo "</table>";
+    }
+
+    /**Mostrar array no-asociativo de dos dimensiones */
+    function verTablaN($tabla){
+        echo "<table border='1'>";
+        foreach($tabla as $fila){
+            echo "<tr>";
+            foreach($fila as $clave => $valor){
+                echo "<td>$valor</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>";
+    }
+
 ?>
