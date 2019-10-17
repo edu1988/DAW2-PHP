@@ -51,7 +51,7 @@
                     $passIntroducido = $_POST["pass"];
                     $passReal = $clientes[$resultado]["pass"];
                     if($passIntroducido==$passReal){
-                        //NOS VAMOS A FRONTEND.PHP
+                        //NOS VAMOS A FRONTEND.PHP nos vamos
                     }else{//contraseña incorrecta
                         echo "Contraseña Incorrecta";
                     }
