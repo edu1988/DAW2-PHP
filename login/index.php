@@ -39,7 +39,7 @@
             //Ordenamos el array
             ordenarTabla($clientes,"dni");
             //Generamos el fichero
-            arrayToFile($clientes,"clientes.txt");
+            arrayToFile($clientes,"clientes.txt","~");
         }else{
             //Si sí que existe el fichero, cargamos el array $clientes en memoria
             $clientes=[];

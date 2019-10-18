@@ -17,9 +17,9 @@
         }
         //Al abandonar del bucle ya se ha escaneado todo el array
         if($lista[$medio]!=$valor){
-            echo "No se ha encontrado el elemento";
+            return "x".$i; //Retornamos la posición donde debería estar, pero etiquetada.
         }else{
-            echo "El valor $valor se encontró en la posición $medio";
+            return $medio; //Posición donde lo encontramos
         } 
     }
 
@@ -40,7 +40,7 @@
         }
         //Al abandonar del bucle ya se ha escaneado todo el array
         if($tabla[$medio][$columna]!=$valor){
-            return "x".$i; //Retornamos la posición teórica donde debería estar etiquetada
+            return "x".$i; //Retornamos la posición teórica donde debería estar, pero etiquetada
         }else{
             return $medio; //Retornamos la posición donde está.
         }

@@ -95,8 +95,9 @@
                  $error["dni"] = "¡DNI BORRADO!";
 
                  //Regeneramos el fichero
-                 arrayToFile($clientes,"clientes.txt");
-            }
+                 arrayToFile($clientes,"clientes.txt","~");
+                }
+                
 
         }
 

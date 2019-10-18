@@ -169,7 +169,7 @@
                 insertarOrdenado($cliente,"dni",$clientes);
                 echo "Cliente Insertado";
                 //Regeneramos el fichero txt
-                arrayToFile($clientes,"clientes.txt");
+                arrayToFile($clientes,"clientes.txt","~");
                 
             }//Fin del if (todo correcto para insertar cliente)
 

@@ -38,11 +38,11 @@
     Recibe por parámetros el array bidimensional y el nombre del fichero
     En la primera línea del fichero se escribirán las claves.
     Cada campo del fichero irá separado por el caracter "~" */
-    function arrayToFile($tabla,$nombreFich){
+    function arrayToFile($tabla,$nombreFich,$separador){
         $claves=array_keys($tabla[0]); //Guardamos las claves
         $fichero=fopen($nombreFich,"w");
         //Escribimos las claves en la primera linea
-        $linea=implode("~",$claves)."\n";
+        $linea=implode($separador,$claves)."\n";
         fwrite($fichero,$linea);
         //Escribimos el resto del contenido
         foreach($tabla as $clave => $valor){

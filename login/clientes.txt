@@ -1,11 +1,11 @@
 dni~pass~nombre~fecha~ciudad~saldo~idiomas
-11111112X~0000~Garcia Garcia, Manuel~2019-10-18~Palencia~1234~inglés,francés
+12222222A~0000~Lopez Lopez, Luis~2019-10-17~Palencia~1234~inglés,francés
 12332321C~2222~Palencia Mulero, Luis~12/01/1978~Valladolid~117~alemán,suahili
 12345345X~5555~Castro Miguel, Rebeca~10/05/1988~Lugo~112~español,groenlandés
-12345678A~0000~Grande Marlaska, José~2019-10-11~Burgos~1298~español,inglés,francés
 19332981C~8888~Aldeano del Monte, Johana~04/12/2001~Cordoba~109~español,lituano,danés,alemán
 45400223D~3333~Martín Crespo, María~09/05/1988~Burgos~114~francés,inglés,danés
-71222222C~0000~Saiz Gil, Ernesto~2019-10-16~Burgos~1111~español,inglés,francés
 73887234A~1234~Perez Miguel, Marisa~10/05/1988~Burgos~115~español,italiano
 73887234A~4444~Rivas Gutierrez, Jimena~12/07/1926~Torrelavega~113~noruego,finlandés,español
 82229482C~1111~Suarez López, Manuel~31/03/1999~Cuenca~116~español,italiano,frances
+87232321Z~6666~Ruiz Viforcos, Manoli~10/05/1988~Briviesca~111~italiano,árabe,canadiense
+88322891G~7777~Carril Saiz, Saúl~14/06/1985~Barakaldo~110~hebreo,chino,japonés
