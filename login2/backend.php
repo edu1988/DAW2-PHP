@@ -30,6 +30,7 @@
 <body>
     <?php
 
+        //Traemos las variables de una url preparada desde el index
         if(isset($_GET["admin"]) && isset($_GET["pass"])){
 
             if($_GET["admin"] == "admin" && $_GET["pass"] == "1234"){

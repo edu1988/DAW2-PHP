@@ -57,6 +57,7 @@
                 //Trabajamos con el array $clientes que ya tenemos cargado en memoria
                 //Buscamos si el dni insertado existe
                 $dni=$_POST["dni"];
+                echo $dni;
                 $resultado=busquedaBinariaTabla($clientes,"dni",$dni);
                 //Sí la función nos devuelve un entero, es que sí que existe
                 if(is_int($resultado)){
