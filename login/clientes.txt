@@ -1,4 +1,6 @@
 dni~pass~nombre~fecha~ciudad~saldo~idiomas
+10888888A~0000~Ernesto Lopez~2019-10-09~Leon~1234~inglés,francés
+10999999A~0000~Eduardo Pérez~2019-10-17~Burgos~1234~
 12222222A~0000~Lopez Lopez, Luis~2019-10-17~Palencia~1234~inglés,francés
 12332321C~2222~Palencia Mulero, Luis~12/01/1978~Valladolid~117~alemán,suahili
 12345345X~5555~Castro Miguel, Rebeca~10/05/1988~Lugo~112~español,groenlandés

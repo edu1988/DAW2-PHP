@@ -39,22 +39,24 @@
     En la primera línea del fichero se escribirán las claves.
     Cada campo del fichero irá separado por el caracter "~" */
     function arrayToFile($tabla,$nombreFich,$separador){
-        $claves=array_keys($tabla[0]); //Guardamos las claves
-        $fichero=fopen($nombreFich,"w");
-        //Escribimos las claves en la primera linea
-        $linea=implode($separador,$claves)."\n";
-        fwrite($fichero,$linea);
-        //Escribimos el resto del contenido
-        foreach($tabla as $clave => $valor){
-            $linea="";
-            foreach($valor as $clave2 => $valor2){
-                //fwrite($fichero,$valor2);
-                $linea.=$valor2."~";
-            }
-            $linea=substr($linea,0,strlen($linea)-1)."\n";
+        if(count($tabla)>0){
+            $claves=array_keys($tabla[0]); //Guardamos las claves
+            $fichero=fopen($nombreFich,"w");
+            //Escribimos las claves en la primera linea
+            $linea=implode($separador,$claves)."\n";
             fwrite($fichero,$linea);
+            //Escribimos el resto del contenido
+            foreach($tabla as $clave => $valor){
+                $linea="";
+                foreach($valor as $clave2 => $valor2){
+                    //fwrite($fichero,$valor2);
+                    $linea.=$valor2."~";
+                }
+                $linea=substr($linea,0,strlen($linea)-1)."\n";
+                fwrite($fichero,$linea);
+            }
+            fclose($fichero);
         }
-        fclose($fichero);
     }
 
     /*Función para volcar un array bidimensional NO-ASOCIATIVO

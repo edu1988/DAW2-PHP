@@ -30,6 +30,17 @@
         //Una vez, desplazados, insertamos nuestro elemento
         $tabla[$indice] = $fila;
     }
+
+    /*Función para insertar una una fila en un array bidimensional
+    en un índice que le indiquemos por parámetro*/
+    function insertarFila($fila,&$tabla,$indice){
+        /*Movemos todos los elementos a partir del índice indicado una posición*/
+        for($i=count($tabla)-1; $i>=$indice; $i--){
+            $tabla[$i+1] = $tabla[$i];
+        }
+        //Una vez desplazados, insertamos nuestro elemento
+        $tabla[$indice] = $fila;
+    }
     
 
 
