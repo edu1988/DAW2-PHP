@@ -13,6 +13,9 @@
 
     /**Mostrar array asociativo de dos dimensiones */
     function verTabla($tabla){
+        if(count($tabla)==0){
+            return;
+        }
         echo "<table border='1'>";
         echo "<tr>";
         foreach($tabla[0] as $clave => $valor){

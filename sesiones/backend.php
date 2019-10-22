@@ -15,6 +15,7 @@
 			
 		h1{
 			text-align:center;
+            margin-top:20px;
 		}
 
 		table{
@@ -25,13 +26,13 @@
             width:auto;
             margin-left:auto;
             margin-right:auto;
-            margin-top:100px;
-            margin-bottom:100px;
+            margin-top:10px;
+            margin-bottom:50px;
             border-collapse:collapse;
 		}
 
         td{
-            padding:10px;
+            padding:15px;
         }
     </style>
 </head>
@@ -48,16 +49,12 @@
             $pass = $_SESSION["pass"];
 
             if($usuario=="admin" && $pass=="1234"){
-
+                echo "<h1>BIENVENIDO ADMINISTRADOR</h1>";
                 echo "<table>
-                        <tr>
-                            <td><h1>BIENVENIDO ADMINISTRADOR</h1></td>
-                        </tr>
                         <tr><td><a href='lista.php'>LISTADO</a></td></tr>
                         <tr><td><a href='altas.php'>ALTAS</a></td></tr>
                         <tr><td><a href='bajas.php'>BAJAS</a></td></tr>
                         <tr><td><a href='informe.php'>INFORME</a></td></tr>
-              
                      </table>";
     
                 echo "<form method='post' action=''>
@@ -70,7 +67,7 @@
         
 
         if(isset($_POST["cerrar"])){
-            session_destroy();
+            session_unset();
             header("Location: index.php");
         }
 

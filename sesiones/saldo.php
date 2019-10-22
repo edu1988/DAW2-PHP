@@ -43,38 +43,26 @@
 
         $usuario = $_SESSION["usuario"];
         $nombreUsuario = $usuario["nombre"];
+        $saldoUsuario = $usuario["saldo"];
 
         echo "<h1>BIENVENIDO $nombreUsuario</h1>
               <form action='' method='post'>
               <table>
                 <tr>
                     <td>
-                        <h3>Elija la opción que desea</h3>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type='submit' name='saldo' value='Ver mi saldo' />
-                        <input type='submit' name='saldom' value='Saldo medio de mi localidad' />
+                        <h2>Saldo: $saldoUsuario €</h2>
                     </td>
                 </tr>
                </table>
               </form>";
+
+        echo "<h4><a href='frontend.php'>VOLVER</a></h4>";
 
         echo "<form method='post' action=''>
               <input type='submit' name='cerrar' value='Cerrar sesion'/>
             </form>";
     } else {
         echo "<h1>NO TIENE ACCESO A ESTA PÁGINA</h1>";
-    }
-
-    if (isset($_POST["saldo"])) {
-        //NOS VAMOS A SALDO.PHP
-        header("Location: saldo.php");
-    }
-
-    if (isset($_POST["saldom"])) {
-        header("Location: saldom.php");
     }
 
 
