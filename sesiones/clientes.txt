@@ -5,6 +5,5 @@ dni~pass~nombre~fecha~ciudad~saldo~idiomas
 19332981C~8888~Aldeano del Monte, Johana~04/12/2001~Cordoba~109~español,lituano,danés,alemán
 45400223D~3333~Martín Crespo, María~09/05/1988~Burgos~114~francés,inglés,danés
 73887234A~1234~Perez Miguel, Marisa~10/05/1988~Burgos~115~español,italiano
-73887234A~4444~Rivas Gutierrez, Jimena~12/07/1926~Torrelavega~113~noruego,finlandés,español
 82229482C~1111~Suarez López, Manuel~31/03/1999~Cuenca~116~español,italiano,frances
 87232321Z~6666~Ruiz Viforcos, Manoli~10/05/1988~Briviesca~111~italiano,árabe,canadiense
