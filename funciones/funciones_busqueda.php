@@ -46,6 +46,33 @@
         }
     }
 
+    function busquedaDicRango($tabla,$campo,$valor,$asc){
+        $cuales=[]; //Array para guardar los resultados de la búsqueda
+        $pos=-2;
+        $suelo=0;
+        $techo=count($tabla)-1;
+        while($pos==-2 && $suelo <= $techo){
+            $donde=floor(($suelo+$techo)/2);
+            if($valor==$tabla[$donde][$campo]){
+                $pos=$donde;
+            }
+            if(($asc && $tabla[$donde][$campo] > $valor) || (!$asc) && $tabla[$donde][$campo] < $valor]){
+                $techo = $donde - 1;
+            }else{
+                $suelo = $donde + 1;
+            }
+        }
+        while($pos >= 0 && $tabla[$pos][$campo]==$valor){
+            $cuales[0] = $pos--;
+        }
+        $pos++;
+        while($pos >= 0 && $pos < count($tabla) && $tabla[$pos][$campo]==$valor){
+            $cuales[1] = $pos++;
+        }
+        return $cuales?$cuales:[$suelo];
+
+    }
+
     /*Función para buscar un valor en un array unidimensional
     mediante el algoritmo de búsqueda dicotómica o binaria
 
