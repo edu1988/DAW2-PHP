@@ -19,7 +19,7 @@
         echo "<table border='1'>";
         echo "<tr>";
         foreach($tabla[0] as $clave => $valor){
-            echo "<td>$clave</td>";
+            echo "<th>$clave</th>";
         }
         echo "</tr>";
         foreach($tabla as $fila){

@@ -46,6 +46,7 @@
         }
     }
 
+    /*
     function busquedaDicRango($tabla,$campo,$valor,$asc){
         $cuales=[]; //Array para guardar los resultados de la búsqueda
         $pos=-2;
@@ -72,7 +73,7 @@
         return $cuales?$cuales:[$suelo];
 
     }
-
+    */
     /*Función para buscar un valor en un array unidimensional
     mediante el algoritmo de búsqueda dicotómica o binaria
 

@@ -1,0 +1,12 @@
+codigo~nombre~fecha~procedencia~stock~precio
+cb37~patatas~2019-10-21~Montorio~6370~1
+hj32~mangos~2019-10-21~Rubena~133~19882
+r323~patatas~2019-10-19~Villadiego~134~1
+xd22~melones~2019-10-18~Burgos~789~1
+fd45~peras~2019-10-17~Villatoro~234~1
+hh78~patatas~2019-10-26~La Aldea~4~1
+yg67~peras~2019-10-17~Madrid~8~1
+rt56~mangos~2019-10-18~Palencia~56~1
+aw23~harina~2019-10-11~Valladolid~89~1
+bj98~calabacines~2019-11-10~Soria~79~1
+fo87~puerros~2018-10-22~Soria~112~1
