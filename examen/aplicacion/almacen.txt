@@ -1,0 +1,9 @@
+cb37~patatas~2019-10-22~Montorio~6370~1
+ab37~patatas~2019-10-23~Montorio~6370~2
+sb37~patatas~2019-10-24~Montorio~6370~0.89
+tb37~patatas~2019-10-25~Montorio~6370~3.2
+xb23~patatas~2019-10-26~Montorio~6370~8.6
+rb37~patatas~2019-10-27~Montorio~6370~4.32
+tb37~patatas~2019-11-01~Montorio~6370~1.112
+rb37~patatas~2019-11-17~Montorio~6370~7.2
+rj37~patatas~2019-12-26~Montorio~6370~0.6
