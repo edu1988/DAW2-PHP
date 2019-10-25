@@ -15,12 +15,22 @@
         fileToArray("almacen.txt","~",$lotes);
     }
     verTabla($lotes);
-
+    echo "<br><br>";
     
     //Eliminamos los caducados
+    /*
     foreach($lotes as $clave=>$valor){
         if(caducado($valor["fecha"])){
             unset($lotes[$clave]);
+        }
+    }
+    */
+
+    $n = count($lotes);
+       //Eliminamos los caducados
+       for($i=0; $i<$n; $i++){
+        if(caducado($lotes[$i]["fecha"])){
+            unset($lotes[$i]);
         }
     }
 
