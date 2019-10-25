@@ -104,18 +104,24 @@
 
             //Una variable guardará la primera ciudad de cada "seccion";
             $ciudadInicial = $clientes[0]["ciudad"];
-            //Otra variable guardará las sumas
+
+            //Otra variable guardará las sumas, empezamos guardando la primera
             $sumaSaldos = $clientes[0]["saldo"];
 
             echo "<table>";
+            //Empezamos recorriendo desde el 2º elemento
             for ($i = 1; $i < count($clientes); $i++) {
-                if($clientes[$i]["ciudad"]==$ciudadInicial){
-                    $sumaSaldos+=$clientes[$i]["saldo"];
-                }else{
+                if($clientes[$i]["ciudad"]==$ciudadInicial){ //Si la ciudad que escaneamos es la misma a la previamente escaneada
+                    $sumaSaldos+=$clientes[$i]["saldo"]; //Acumulamos su saldo
+                }else{ //en caso contrario
+                    //Hemos cambiado de ciudad, por lo tanto mostramos los datos de la ciudad anterior
                     echo "<tr><td>Saldo total de $ciudadInicial: $sumaSaldos €</td></tr>";
+                    //Reasignamos la ciudad inicial
                     $ciudadInicial=$clientes[$i]["ciudad"];
+                    //Reiniciamos la suma de los saldos
                     $sumaSaldos=$clientes[$i]["saldo"];
                 }
+                //Caso particular para el último indice del bucle, mostrar las últimas asignaciones
                 if($i==count($clientes)-1){
                     echo "<tr><td>Saldo total de $ciudadInicial: $sumaSaldos €</td></tr>";
                 }
