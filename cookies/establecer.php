@@ -7,10 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>ESTABLECER UNA COOKIE</h1>
+    <h1>ESTABLECER UNA COOKIE DE UN MINUTO DE DURACIÓN</h1>
     <?php
-        echo "Vamos a establecer una cookie llamada 'micookie' y cuyo contenido es 'contenido de mi cookie'";
-        setcookie("micookie","contenido de mi cookie",time()+60*60*1000);
+
+        if(isset($_COOKIE["micookie"])){
+            echo "La cookie ya existe";
+        }else{
+            echo "La cookie 'micookie' no existía<br>";
+            echo "Acabamos de crear la cookie 'micookie'";
+            setcookie("micookie","contenido de mi cookie",time()+60);
+        }
+        
+        
+
 
     ?>
     
