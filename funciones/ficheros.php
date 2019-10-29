@@ -14,10 +14,11 @@
         $primeraLinea=str_replace("\n","",$primeraLinea);
         //Extraemos las claves
         $listaKeys=explode($separador,$primeraLinea);
-        //Leemos el primer registro
         $registro=fgets($fichero);
+        
         $tabla=[]; //Vaciamos el array, me lo den como me lo den
         while($registro){
+            
             $registro=str_replace("\n","",$registro);
             $lista=explode($separador,$registro);
             $fila=[];
@@ -26,13 +27,13 @@
                 $fila[$key]=$lista[$i];
             }
             $tabla[] = $fila;
-            //Leemos el siguiente registro
+            
             $registro=fgets($fichero);
         }
         fclose($fichero);
     }
 
-    /*Función para volcar el contenido de un array bidimensional en
+    /*Función para volcar el contenido de un array unidimensional en
     un fichero txt.
     Recibe por parámetros el array bidimensional y el nombre del fichero
     En la primera línea del fichero se escribirán las claves.
@@ -97,6 +98,7 @@
             //Escribimos la linea en el fichero
             fwrite($fichero,$linea);
         }
+        fflush($fichero);
         fclose($fichero);
     }
 

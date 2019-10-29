@@ -1,3 +1,27 @@
+<?php
+    session_start();
+    $archivo="contador.txt";
+    if(!isset($_SESSION["contador"])){
+        if(file_exists($archivo)){
+            $fd=fopen($archivo,"r");
+            $visitas=fgets($fd);
+            fclose($fd);
+        }else{
+            $visitas=0;
+        }
+        $visitas++;
+
+        $fd=fopen($archivo,"w");
+        fwrite($fd,$visitas);
+        fclose($fd);
+
+        $_SESSION["contador"]=$visitas;
+    }
+
+    echo "<h1>Eres el visitante numero " . $_SESSION["contador"] . "</h1>";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
