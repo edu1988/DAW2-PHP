@@ -5,20 +5,22 @@
     Le pasamos por parámetro la cookie que queremos actualizar y el número
     del producto, que será un valor del 1 al 3 */
 
-    function sumarVisitaProducto($cadena,$producto){
-        list($a,$b,$c) = explode("~",$cadena);
-        if($producto==1){
+    function sumarVisitaProducto(&$cadena,$producto){
+        list($a,$b,$c,$d) = explode("-",$cadena);
+        if($producto=="a"){
             $a++;
         }
-        if($producto==2){
+        if($producto=="b"){
             $b++;
         }
-        if($producto==3){
+        if($producto=="c"){
             $c++;
         }
-        $valores=[$a,$b,$c];
-        $cookie=implode("~",$valores);
-        return $cookie;
+        if($producto=="index"){
+            $d++;
+        }
+        $valores=[$a,$b,$c,$d];
+        $cadena=implode("-",$valores);
     }
     
     

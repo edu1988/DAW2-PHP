@@ -3,13 +3,10 @@
 
     if($_SESSION["actual"] != "productob"){
 
-        if(!isset($_COOKIE["visitas"])){
-            setcookie("visitas","0~0~0",time()+30*24*60*60);
-        }
     
         include "funciones.php";
         $visitas=$_COOKIE["visitas"];
-        $visitas=sumarVisitaProducto($visitas,2);
+        sumarVisitaProducto($visitas,"b");
         //Actualizamos (sobreescribimos) la cookie
         setcookie("visitas",$visitas,time()+30*24*60*60);
 
