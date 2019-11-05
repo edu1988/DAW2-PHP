@@ -24,7 +24,8 @@
 
         if(!isset($_COOKIE["info"])){
 
-            header("Location:alta.php");
+            echo "No está usted registrado, se le redireccionará a la página de registro...";
+            echo "<META HTTP-EQUIV='REFRESH' CONTENT='3;URL=http://localhost/cookies/login/alta.php'>";
             exit();
 
         }else{

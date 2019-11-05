@@ -16,4 +16,30 @@
         }
     }
 
+
+    //Apartado 5
+    $almacen=array();
+    fileToArray("almacen.txt",$almacen);
+    $prod_max=$almacen[0]["nombre"];
+    $precio=$almacen[0]["stock"]*$almacen[0]["precio"];
+    for($i=0; $i<count($almacen); $i++){
+        $producto=$almacen[$i]["nombre"];
+        if(!isset($inversion[$producto])){
+            $inversion[$producto]=$almacen[0]["stock"]*$almacen[0]["precio"];
+        }else{
+            $inversion[$producto]+=$almacen[0]["stock"]*$almacen[0]["precio"];
+        }
+    }
+
+    $mayorInversion=$inversion["patatas"];
+    $producto="patatas";
+    foreach($inversion as $clave => $valor){
+        if($valor > $mayorInversion){
+            $producto=$clave;
+        }
+    }
+
+    echo "El producto con la mayor inversion es " . $producto;
+
+
 ?>

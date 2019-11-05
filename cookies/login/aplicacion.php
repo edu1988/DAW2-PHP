@@ -8,6 +8,14 @@
 </head>
 <body>
 
+    <?php
+        session_start();
+        if(!isset($_SESSION["usuario"]) or !isset($_SESSION["password"])){
+            header("Location:login.php");
+        }
+
+    ?>
+
     <h1>BIENVENIDO A LA APLICACIÓN</h1>
     
 </body>
