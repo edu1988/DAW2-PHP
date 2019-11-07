@@ -4,7 +4,7 @@
     include "funciones.php";
 
     /*Si no existe ninguna cookie para guardar la información, la creamos.
-    Guardaremos en ella el número de veces que se visita cada producto y el
+    Guardaremos en ella el tiempo que se visita cada pagina en segundos y el
     número de visitas totales de la página*/
 
     if(!isset($_COOKIE["visitas"])){ 
