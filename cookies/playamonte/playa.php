@@ -4,7 +4,7 @@
     
     //Actualizamos la cookie con la página que está visitando y la fecha
     $infoCookie=$_COOKIE["info"];
-    setcookie("info",actualizarFechaCookie(actualizarPaginaCookie($infoCookie,"playa")));
+    setcookie("info",actualizarFechaCookie(actualizarPaginaCookie($infoCookie,"playa")),time()+60*60*24*60);
 
 ?>
 
