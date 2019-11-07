@@ -19,6 +19,7 @@
 <body>
 
     <h1>MONTAÑA</h1>
+    <a href="index.php">Volver a inicio</a>
     
 </body>
 </html>

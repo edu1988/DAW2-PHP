@@ -8,10 +8,11 @@
 </head>
 <body>
     <?php
-        session_start();
+        include "funciones.php";
 
         if(isset($_POST["enviar"])){
-            $_SESSION["nombre"]=$_POST["nombre"];
+            $infoCookie=$_POST["nombre"]."-".fechaHoraActual()."-index-1";
+            setcookie("info",$infoCookie,time()+60*60*24*60);
             header("Location:index.php");
         }
 

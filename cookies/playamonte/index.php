@@ -6,27 +6,20 @@
 
     if(!isset($_COOKIE["info"])){
         
-        if(!isset($_SESSION["nombre"])){
-            $info="BIENVENIDO, ES LA PRIMERA VEZ QUE NOS VISITA. LE PEDIREMOS SU NOMBRE.";
-            echo "<META HTTP-EQUIV='REFRESH' CONTENT='2;URL=http://localhost/cookies/playamonte/pedirnombre.php'>";
-        }else{
-            $nombre=$_SESSION["nombre"];
-            $info="BIENVENIDO ".$nombre.". ES LA VEZ 1 QUE NOS VISITA";
-
-            //Establecemos la cookie
-            $fecha=fechaHoraActual();
-            $infoCookie=$nombre."-".$fecha."-"."index"."-"."1";
-            setcookie("info",$infoCookie,time()+60*60*24*60);
-
-            //Inicializamos la variable de sesion "actual"
-            $_SESSION["actual"]="index";
-        }
+        $_SESSION["actual"]="index";
+        $veces=1;
+        $info="BIENVENIDO, ES LA PRIMERA VEZ QUE NOS VISITA. LE PEDIREMOS SU NOMBRE.";
+        echo "<META HTTP-EQUIV='REFRESH' CONTENT='2;URL=http://localhost/cookies/playamonte/pedirnombre.php'>";
+        
 
     }else{ //Sí existe la cookie, no es su primera visita
 
          //Extraemos la informacion de las visitas
          $infoCookie=$_COOKIE["info"];
-         $veces=explode("-",$infoCookie)[3];
+         $datos=explode("-",$infoCookie);
+         $nombre=$datos[0];
+         $fecha=$datos[1];
+         $veces=$datos[3];
 
         if(!isset($_SESSION["actual"])){ //Sucesivas visitas provenientes del exterior
 
@@ -34,7 +27,7 @@
             //También hay que guardar en la cookie la informacion de la fecha-hora actual
 
             setcookie("info",actualizarFechaCookie(sumarVisitaCookie($infoCookie)),time()+60*60*24*60);
-            $veces = explode("-",$_COOKIE["info"])[3];
+            
             $veces++;
 
             //Vemos cuál fue la última página que visitó
@@ -49,12 +42,6 @@
             setcookie("info",actualizarFechaCookie($infoCookie),time()+60*60*24*60);
 
         }
-
-        //Extraemos la informacion de la cookie
-        $infoCookie=$_COOKIE["info"];
-        $datos=explode("-",$infoCookie);
-        $nombre=$datos[0];
-        //$visitas=$datos[3];
 
         $info="BIENVENIDO ".$nombre.". ES LA VEZ ".$veces." QUE NOS VISITA";
     }
@@ -75,10 +62,20 @@
         if(isset($sitio)){
             echo "<h1>El último sitio que visitó fue $sitio</h1>";
         }
+        if(isset($fecha)){
+            echo "<h1>Fecha y hora de su última visita: $fecha</h1>";
+        }
+        
     ?>
     <p>Elija una opción</p>
     <a href="playa.php">PLAYA</a>
     <br>
     <a href="monte.php">MONTAÑA</a>
+    <br>
+    <?php
+        if($veces > 5){
+            echo "Nueva promoción: <a href='fiordos.php'>Fiordos Gallegos</a>";
+        }
+    ?>
 </body>
 </html>
