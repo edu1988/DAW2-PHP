@@ -1,5 +1,16 @@
 <?php
 
+    /*Función para busqueda secuencial de un valor en un campo de un array bidimensional */
+    function busquedaSecuencial($tabla,$columna,$valor){
+        for($i=0; $i<count($tabla); $i++){
+
+            if($tabla[$i][$columna]===$valor){
+                return $i;
+            }
+        }
+        return -1;
+    }
+
     
     /*Misma función pero con ligeras variaciones*/
 

@@ -3,6 +3,7 @@
 
     include "datos.php";
     include "../funciones/ficheros.php";
+    include "../funciones/funciones_busqueda.php";
 
     //Cargamos el array en memoria desde el fichero
     $usuarios=[];
@@ -12,6 +13,19 @@
     if(isset($_POST["enviar"])){
         $email = $_POST["email"];
 
+        $fila=busquedaSecuencial($usuarios,"email",$email);
+        
+        
+        if($dato !== -1){
+            $usuario=$usuarios[$fila];
+            $_SESSION["usuario"]=$usuario; //Guardamos el usuario en una variable de sesión
+            
+            header("Location:pass.php");
+        }else{
+            echo "Ese email no existe";
+        }
+        
+        /*
         //Recorremos el array
         $i=0;
         $dato_email = $usuarios[$i]["email"];
@@ -24,6 +38,8 @@
             }
             
         }
+        
+
 
         //Si lo encontramos
         if($i<count($usuarios)){
@@ -33,6 +49,7 @@
         }else{
             echo "Ese email no existe";
         }
+        */
 
     }
 
