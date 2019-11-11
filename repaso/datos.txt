@@ -1,5 +1,6 @@
 email~password~rol~1ev~2ev~3ev~fecha~localidad
-edu@edudaw.com~1234~alumno~6~8~4~1988-05-10~burgos
-xclimb@gmail.com~1234~alumno~6~8~4~1988-05-10~burgos
-luis@hotmail.com~1234~alumno~6~8~4~1988-05-10~burgos
+edu@edudaw.com~1234~alumno~6,5~6,7,8,9~1,2,3,4~1988-05-10~burgos
+xclimb@gmail.com~1234~alumno~6,8,7,6~4,5,3,9~6,2,1,9~1988-05-10~burgos
+luis@hotmail.com~1234~alumno~6,7,7,6,6~10~10,8,7,6~1988-05-10~burgos
 adri@gmail.com~1234~profesor~~~~1988-05-10~burgos
+adri3@gmail.com~1234~tutor~~~~1988-05-10~burgos
