@@ -4,8 +4,7 @@
     session_destroy();
     header("Location:index.php");
 
-    echo "Has sido expulsado por 3 intentos fallidos<br>";
-    echo "Se te enviará una nueva contraseña por correo";
+
 
 ?>
 

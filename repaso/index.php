@@ -5,6 +5,11 @@
     include "../funciones/ficheros.php";
     include "../funciones/funciones_busqueda.php";
 
+    /*
+    //Generamos el fichero txt
+    arrayToFile($usuarios,"datos.txt","~");
+    */
+
     //Variables de sesión para almacenar información
     if(!isset($_SESSION["actual"])){
         $_SESSION["email"]="";
@@ -12,6 +17,7 @@
         $_SESSION["actual"]="index";
         $_SESSION["intentos"]=0; //Intentos de inicio de sesión
     }
+
 
     //Variables para mostrar informacion en los placeholder
     $infoEmail = "Introduzca email";
@@ -31,6 +37,9 @@
             $email=$_POST["email"];
             
             $fila=busquedaSecuencial($usuarios,"email",$email);
+
+            
+
             if($fila !== -1){
                 //En caso de que el email sí exista
                 //Guardamos todo el usuario en una variable de sesión
@@ -38,6 +47,9 @@
                 $_SESSION["email"]=$email;
                 //Mostramos el campo del password
                 $_SESSION["mostrar_pass"]=true;
+
+                //Guardamos la fila en la que se encuentra en una variable de sesión para futuros usos
+                $_SESSION["fila"]=$fila;
             }else{
                 //Mostramos que el email no existe
                 $infoEmail="Ese email no existe";
@@ -66,8 +78,25 @@
             }else{
                 $_SESSION["intentos"]++;
                 $infoPassword=$_SESSION["intentos"]." intentos de 3";
-                if($_SESSION["intentos"]==3){
-                    header("Location:logout.php");
+                if($_SESSION["intentos"]>2){
+                    //Preparamos una contraseña aleatoria
+                    include "../funciones/aleatorizacion.php";
+                    $claveAleatoria = generarClaveAleatoria();
+
+                    //Actualizamos el array y la clave en el fichero para ese usuario
+                    $usuarios[$_SESSION["fila"]]["password"]=$claveAleatoria;
+                    arrayToFile($usuarios,"datos.txt","~");
+
+                    //Enviamos un correo con la contraseña al usuario
+                    mail($_SESSION["email"],'Contraseña nueva',$claveAleatoria);
+
+
+                    //Cerramos sesión y refrescamos la página en 5 segundos, tras mostrar un mensaje
+                    session_destroy();
+                    $enviado="Ha agotado sus intentos. Se le enviará un correo con una contraseña nueva";
+                    echo "<META HTTP-EQUIV='REFRESH' CONTENT='5;URL=http://www.edudaw.com/clase_php/index.php'>";
+                    
+                    
                 }
             }
         }
@@ -101,6 +130,13 @@
                 ?>" required/>
         <?php endif;?>
         <input type="submit" name="enviar" value="Enviar"/>
+        <p style="color:white">
+            <?php
+                if(isset($enviado)){
+                    echo $enviado;
+                }
+            ?>
+        </p>
 
     </form>
     

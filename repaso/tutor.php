@@ -1,10 +1,10 @@
 <?php
     session_start();
 
-    if($_SESSION["usuario"]["rol"]=="tutor"){
-
-        
-
+    if($_SESSION["usuario"]["rol"]!="tutor"){
+        //Echamos al usuario de la página después de cerrar sesión
+        session_destroy();
+        header("Location:index.php");
     }
 
 
@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--link rel="stylesheet" href="estilos.css" /-->
-    <title>Document</title>
+    <title>Tutor</title>
     <style>
 
     </style>
@@ -34,7 +34,6 @@
             <li></li>
         </ul>
     </nav>
-
 
 </body>
 
