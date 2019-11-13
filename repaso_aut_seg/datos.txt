@@ -1,0 +1,6 @@
+email~password~rol~1ev~2ev~3ev~fecha~localidad
+edu@edudaw.com~379ef4bd50c30e261ccfb18dfc626d9f~alumno~6~6~1~1988-05-10~burgos
+xclimb@gmail.com~a5f9dc95c0670fb7b59f146a495f28aa~alumno~6~4~6~1988-05-10~burgos
+luis@hotmail.com~502ff82f7f1f8218dd41201fe4353687~alumno~4~4~4~1988-05-10~burgos
+profesor@gmail.com~793741d54b00253006453742ad4ed534~profesor~~~~1988-05-10~burgos
+tutor@gmail.com~1f6f42334e1709a4e0f9922ad789912b~tutor~~~~1988-05-10~burgos
