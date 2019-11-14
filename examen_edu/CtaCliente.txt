@@ -1,0 +1,6 @@
+dni~contra~nombre~saldo
+13051609Y~1234~Rodolfo~21000
+12345678B~1234~Rodrigo~20000
+22333333C~1234~Ernesto~0
+11111111A~1234~Basilio~0
+71299244A~1234~Eduardo~0

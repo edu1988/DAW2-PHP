@@ -1,11 +1,13 @@
 <?php
     session_start();
 
+    //Si el usuario logueado no es un tutor, le echamos
     if($_SESSION["usuario"]["rol"]!="tutor"){
-        //Echamos al usuario de la página después de cerrar sesión
         session_destroy();
         header("Location:index.php");
     }
+
+    
 
 
 ?>
