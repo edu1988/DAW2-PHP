@@ -1,0 +1,7 @@
+{
+    "name": "lichtner/fluentpdo",
+    "description": "Libreria para trabajar con fluidez con pdos",
+    "type": "project",
+    "minimum-stability": "alpha",
+    "require": {}
+}

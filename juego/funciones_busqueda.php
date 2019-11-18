@@ -1,5 +1,17 @@
 <?php
 
+    /*Busqueda secuencial en array unidimensional */
+    function busquedaSecuencialLista($lista,$valor){
+        $i=0;
+        $encontrado=false;
+        while($i<count($lista) && !$encontrado){
+            if($lista[$i]===$valor){
+                $encontrado=true;
+            }
+        }
+        return $encontrado?$i:-1;
+    }
+
     /*Función para busqueda secuencial de un valor en un campo de un array bidimensional */
     function busquedaSecuencial($tabla,$columna,$valor){
         $i=0;
@@ -39,6 +51,9 @@
      * array bidimensional
      */
     function busquedaBinariaTabla($tabla,$columna,$valor){
+        if(count($tabla)==0){
+            return -1;
+        }
         $i=0; //Posicion inicial
         $j=count($tabla)-1; //Posicion final
         $medio = (int)(($i+$j)/2); //Índice de la posición media
