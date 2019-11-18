@@ -8,11 +8,11 @@
 
     //Acción a realizar cuando enviamos el formulario
     if(isset($_POST["enviar"])){
-
+		
         //Recogemos las variables
         $dni = $_POST["dni"];
         $pass = $_POST["pass"];
-
+		
         //Antes de comprobar si es un usuario que existe en el fichero
         //Vamos a comprobar si el que accede es el administrador
         if($dni=="admin" && $pass=="password"){
@@ -20,6 +20,7 @@
             $_SESSION["admin"]="admin";
             //Nos vamos
             header("Location:backend.php");
+			
         }
             
 
