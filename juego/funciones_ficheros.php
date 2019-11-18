@@ -11,15 +11,15 @@
         $fichero=fopen($nombreFich,"r");
         //Primera linea para extraer las claves
         $primeraLinea=fgets($fichero);
-        $primeraLinea=str_replace("\n","",$primeraLinea);
+        $primeraLinea=trim($primeraLinea);
         //Extraemos las claves
         $listaKeys=explode($separador,$primeraLinea);
-        $registro=fgets($fichero);
+        $registro=trim(fgets($fichero));
         
         $tabla=[]; //Vaciamos el array, me lo den como me lo den
         while($registro){
             
-            $registro=str_replace("\n","",$registro);
+            //$registro=str_replace("\n","",$registro);
             $lista=explode($separador,$registro);
             $fila=[];
             for($i=0; $i<count($listaKeys); $i++){
@@ -28,7 +28,7 @@
             }
             $tabla[] = $fila;
             
-            $registro=fgets($fichero);
+            $registro=trim(fgets($fichero));
         }
         fclose($fichero);
     }

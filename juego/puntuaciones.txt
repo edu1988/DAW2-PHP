@@ -1,8 +1,4 @@
 nombre.fecha.puntuacion
 Eduardo.2019-11-17.1
-Paco.2019-11-17.1
-Rodrigo.2019-11-17.2
-Ernesto.2019-11-17.3
-Manuel.2019-11-17.6
-Estrella.2019-11-17.7
-Bicho.2019-11-17.3
+Paco.2019-11-18.3
+dos intentos.2019-11-18.2

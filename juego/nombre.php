@@ -9,7 +9,8 @@
     fileToArray("puntuaciones.txt",".",$puntuaciones);
 
     //Ordenamos el array por el campo puntuación
-    ordenarTabla($puntuaciones,"puntuacion");
+    //ordenarTabla($puntuaciones,"puntuacion");
+    //var_dump($puntuaciones);
 
 
     //Recuperamos la información que queremos guardar en el archivo
@@ -20,9 +21,11 @@
 
         //Elaboramos el registro a escribir en el fichero
         $registro=array("nombre"=>$nombre, "fecha"=>$fecha, "puntuacion"=>$puntuacion);
-
+        var_dump($puntuaciones);
         //Lo insertamos ordenado en el array
         insertarOrdenado($registro,"puntuacion",$puntuaciones);
+
+        var_dump($puntuaciones);
 
         //Reescribimos el fichero
         arrayToFile($puntuaciones,"puntuaciones.txt",".");
